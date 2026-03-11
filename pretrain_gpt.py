@@ -63,6 +63,12 @@ except ImportError:
 
 stimer = StragglerDetector()
 
+from dataclasses import dataclass
+
+@dataclass
+class FlexibleVPPConfig:
+    pipeline_model_parallel_layout = None
+    mtp_num_layers = None
 
 def get_batch(data_iterator, vp_stage: Optional[int] = None):
     """Generate a batch."""
